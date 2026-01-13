@@ -80,4 +80,6 @@ WebApp simple untuk mengelola barang dengan sistem kasta``(admin dan bukan admin
 Cek juga repo lain nya:
  [Html dasar](https://github.com/laLafid/Lab1Web), [CSS dasar](https://github.com/laLafid/lab2web), [CSS](https://github.com/laLafid/Lab3Web), [CSS Layout](https://github.com/laLafid/Lab4Web), [Dasar Javascript](https://github.com/laLafid/Lab5Web), [Dasar Bootstarp](https://github.com/laLafid/Lab6Web), [Dasar PHP](https://github.com/laLafid/Lab7Web), [CRUD PHP](https://github.com/laLafid/Lab8Web),  [Modular PHP](https://github.com/laLafid/Lab9Web), [OOP PHP](https://github.com/laLafid/Lab10Web), [OOP Lanjutan](https://github.com/laLafid/Lab11Web), [Autentikasi Tahap Lanjut](https://github.com/laLafid/Lab12Web) dan [Pagination dan Search bar](https://github.com/laLafid/Lab13Web).
 
+cek ini juga [yt](https://youtu.be/sYlmS0QC8Rk)
+
 *Selamat mencoba*
