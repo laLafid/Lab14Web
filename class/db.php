@@ -4,7 +4,7 @@ if (!file_exists(ROOT . 'config.php')) {
     die('File config.php tidak ditemukan di: ' . ROOT . 'config.php'); } // ngambek kalo ga gini 
 require_once ROOT . 'config.php';
 define('GAMBAR', ROOT . 'gambar/');
-define('BASE_URL', 'http://localhost/webpro15/');  // ganti sesuai folder , jangn lupain di .htaccess juga
+define('BASE_URL', 'http://localhost/project/');  // ganti sesuai folder , jangn lupain di .htaccess juga
  
  
 class Database {

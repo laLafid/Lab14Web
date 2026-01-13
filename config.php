@@ -3,6 +3,6 @@ $config = [
     'host'      => 'localhost',
     'username'  => 'root',
     'password'  => '',
-    'db_name'   => 'latihan1',
+    'db_name'   => 'db', // sesuaikan nama Database 
 ];
 ?> 
