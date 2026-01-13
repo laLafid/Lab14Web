@@ -14,7 +14,7 @@ WebApp simple untuk mengelola barang dengan sistem kasta``(admin dan bukan admin
     - Buka XAMPP control panel dulu, aktifin ``apache`` dan ``mysql`` lalu pencet admin dibagian ``mysql`` buat masuk ke phpmyadmin.
     ![alt text](gambar/Bukaxxamp.png)![alt text](gambar/myadmn.png)
 
-    - Import Database [Ini](db/latihan1.sql)
+    - Import Database [Ini](https://github.com/laLafid/Lab14Web/blob/eab59f19d676454cfa032c1d4deaac5d8427f5b2/db/latihan1.sql)
     
     ![alt text](gambar/import.png)
 
@@ -27,9 +27,9 @@ WebApp simple untuk mengelola barang dengan sistem kasta``(admin dan bukan admin
     ![alt text](gambar/file.png)
 
     - Koneksi Database pake PHP 
-    [config](config.php) dan [ini](class/db.php)
+    [config](https://github.com/laLafid/Lab14Web/blob/eab59f19d676454cfa032c1d4deaac5d8427f5b2/config.php) dan [ini](https://github.com/laLafid/Lab14Web/blob/eab59f19d676454cfa032c1d4deaac5d8427f5b2/class/db.php)
 
-    - Menyesuaikan setting codebase kalian di [sini](.htaccess) dan [ini juga](class/db.php)
+    - Menyesuaikan setting codebase kalian di [sini](https://github.com/laLafid/Lab14Web/blob/eab59f19d676454cfa032c1d4deaac5d8427f5b2/.htaccess) dan [ini juga](https://github.com/laLafid/Lab14Web/blob/eab59f19d676454cfa032c1d4deaac5d8427f5b2/class/db.php)
 
 
 3. **Hasil Akhir**
