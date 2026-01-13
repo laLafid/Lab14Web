@@ -6,6 +6,6 @@ if (isset($_GET['id'])) {
     $id = $_GET['id'];
     $db->delete('data_barang', "WHERE id_barang = '$id'");
 }
-header('Location: ' . BASE_URL . 'artikel/home'); // ini 
+header('Location: ' . BASE_URL . 'user/home'); // ini 
 exit;
 ?>

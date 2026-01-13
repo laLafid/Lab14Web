@@ -1,6 +1,6 @@
 </div>
 
-<footer class="bg-dark text-white text-center py-4 mt-auto">
+<footer class="bg-dark text-white text-center py-4 mt-auto" >
     <div class="container">
         <p class="mb-0">© 2021–<?= date('Y') ?> Informatika, Universitas Pelita Bangsa</p>
     </div>

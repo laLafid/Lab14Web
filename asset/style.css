@@ -7,11 +7,101 @@ html,
 body{font-family:"Poppins",sans-serif;background:linear-gradient(135deg,#f5f7fa 0%,#e4edf5 100%);min-height:100vh}
 .navbar-brand{font-weight:700}
 .card{border:none;border-radius:1rem;box-shadow:0 10px 30px rgba(0,0,0,.08)}
-.btn-primary{background:#5d87b8;border:none;border-radius:50px;padding:10px 30px}
-.btn-primary:hover{background:#4a6fa5}
-.btn-danger{border-radius:50px}
 
-footer{margin-top:auto}
+.btn {
+    border: none;
+    border-radius: 8px;          
+    padding: 10px 24px;
+    font-weight: 500;
+    transition: all 0.25s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.btn-primary {
+    background: #5d87b8;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #4f78a8;
+    box-shadow: 0 4px 14px rgba(93,135,184,0.25);
+    transform: translateY(-1px);
+}
+
+.btn-danger {
+    background: #e74c3c;
+    color: white;
+}
+
+.btn-danger:hover {
+    background: #c0392b;
+    box-shadow: 0 4px 14px rgba(231,76,60,0.25);
+    transform: translateY(-1px);
+}
+
+.btn-secondary {
+    background: #7f8c8d;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: #6c757d;
+    box-shadow: 0 4px 14px rgba(108,117,125,0.25);
+    transform: translateY(-1px);
+}
+
+.btn-warning {
+    background: #f1c40f;
+    color: #212529;
+}
+
+.btn-warning:hover {
+    background: #e0b307;
+    box-shadow: 0 4px 14px rgba(241,196,15,0.3);
+    transform: translateY(-1px);
+}
+
+.btn-info {
+    background: #3498db;
+    color: white;
+}
+
+.btn-info:hover {
+    background: #2980b9;
+    box-shadow: 0 4px 14px rgba(52,152,219,0.25);
+    transform: translateY(-1px);
+}
+
+.btn-success {
+    background: #27ae60;
+    color: white;
+}
+
+.btn-success:hover {
+    background: #219653;
+    box-shadow: 0 4px 14px rgba(39,174,96,0.25);
+    transform: translateY(-1px);
+}
+
+.btn-sm {
+    padding: 6px 16px;
+    font-size: 0.875rem;
+    border-radius: 3px;
+}
+.btn-outline-primary {
+    background: transparent;
+    border: 1.5px solid #5d87b8;
+    color: #5d87b8;
+}
+
+.btn-outline-primary:hover {
+    background: #5d87b8;
+    color: white;
+}
+
+
+header{position:sticky;top:0;z-index:100;background:#ffffff;box-shadow:0 2px 10px rgba(0,0,0,.06);backdrop-filter:blur(8px);}
+footer{margin-top:auto;padding:10px 0;}
 
 .table{border-radius:16px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.08);background:#fff}
 .table thead{background:linear-gradient(135deg,#5d87b8,#4a6fa5);color:white}
@@ -19,7 +109,7 @@ footer{margin-top:auto}
 .table tbody td{padding:16px 12px;vertical-align:middle;text-align:center;border-bottom:1px solid #e9ecef}
 .table tbody tr{transition:all .25s ease}
 .table tbody tr:hover{background-color:#f8fbff;transform:translateY(-2px);box-shadow:0 8px 25px rgba(93,135,184,.1)}
-.table img{width:72px!important;height:72px!important;object-fit:contain!important;border-radius:14px;border:3px solid #fff;box-shadow:0 4px 15px rgba(0,0,0,.1);background:#fff;padding:8px;display:block;margin:0 auto;transition:transform .3s ease}
+.table img{width:72px!important;height:72px!important;object-fit:contain!important;border-radius:14px;border:3px solid #fff;box-shadow:0 4px 15px rgba(0,0,0,.1);background:#fff;padding:8px;display:block;margin:0 auto;transition:transform .3s ease;background:#ffffff;box-shadow:0 2px 10px rgba(0,0,0,.06);backdrop-filter:blur(8px);}
 .table img:hover{transform:scale(1.1)}
 .table td:nth-child(1),
 .table th:nth-child(1){width:100px!important;min-width:100px}
@@ -38,6 +128,120 @@ ul.pagination li a{color:black;float:left;padding:8px 16px;text-decoration:none;
 ul.pagination li a.active{background-color:#428bca;color:white}
 ul.pagination li a:hover:not(.active){background-color:#ddd}
  
-@media (max-width:768px){.sidebar {padding-top: 15px;}.sidebar a {font-size: 18px;}.table thead{display:none}.table,.table tbody,.table tr,.table td{display:block;width:100%}.table tr{margin-bottom:20px;border-radius:16px;overflow:hidden;box-shadow:0 8px 25px rgba(0,0,0,.1)}.table td{text-align:right;padding-left:50%;position:relative}.table td::before{content:attr(data-label);position:absolute;left:16px;width:45%;font-weight:600;color:#5d87b8;text-align:left}}
+@media (max-width:768px){.sidebar {padding-top: 15px;}.sidebar a {font-size: 18px;}
+  .table-responsive {
+    border: 0;
+  }
+  .table {
+    width: 100%;
+    margin-bottom: 0;
+  }
+  .table thead{
+    display: none;
+  }
+  .table, .table tbody, .table tr, .table td {
+    display: block;
+    width: 100%;
+  }
+  .table tr {
+    margin-bottom: 1.25rem; /* 20px */
+    border-radius: 1rem; /* 16px */
+    overflow: hidden;
+    box-shadow: 0 0.5rem 1.5625rem rgba(0,0,0,.1); /* 0 8px 25px */
+  }
+  .table td {
+    text-align: right;
+    padding-left: 50%;
+    position: relative;
+    white-space: normal; /* Allow text to wrap */
+    word-break: break-word; /* Break long words */
+    border-bottom: 1px solid #e9ecef; /* Add border for separation */
+  }
+  .table td:last-child {
+    border-bottom: 0; /* No border for the last cell */
+  }
+  .table td::before{
+    content:attr(data-label);
+    position:absolute;
+    left:1rem; /* 16px */
+    width:45%;
+    font-weight:600;
+    color:#5d87b8;
+    text-align:left;
+  }
+  .table img {
+    margin: 0 auto;
+    display: block;
+  }
+}
 
+/* Modern Form Styles */
+.modern-form {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 1rem; /* Consistent with .card */
+    box-shadow: 0 10px 30px rgba(0,0,0,.08); /* Consistent with .card */
+    margin: 50px auto; /* Center the form and provide some vertical spacing */
+    max-width: 600px; /* Limit form width */
+}
 
+.modern-form table {
+    width: 100%;
+    border-collapse: separate; /* Allows border-radius on cells if needed */
+    border-spacing: 0;
+}
+
+.form-group {
+    margin-bottom: 1rem; /* Spacing between form fields */
+}
+
+.form-label {
+    font-weight: 600;
+    color: #333;
+    padding-right: 15px; /* Space between label and input */
+    text-align: left !important; /* Override table alignment */
+    vertical-align: middle !important;
+}
+
+.form-control {
+    width: calc(100% - 15px); /* Full width minus label padding */
+    padding: 10px 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 0.5rem; /* Slightly rounded corners for inputs */
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-control:focus {
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.form-check {
+    display: flex; /* Use flexbox for alignment */
+    align-items: center;
+    margin-right: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.form-check-input {
+    margin-right: 0.5rem;
+    /* Custom styles for radio/checkbox might be needed for full modernization */
+    /* For now, just ensure it's not hidden by default browser styles */
+}
+
+/* Adjust table cell padding for inputs within the form */
+.modern-form td {
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+/* Specific styling for the submit button row to align it correctly */
+.modern-form tr:last-child td {
+    text-align: center; /* Center the submit button */
+    padding-top: 20px;
+}

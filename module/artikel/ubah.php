@@ -32,13 +32,13 @@ if ($_POST) {
     }
 
     $db->update('data_barang', $update, "id_barang = '$id'");
-    header("Location: " . BASE_URL . "artikel/home");
+    header("Location: " . BASE_URL . "user/home");
     exit;
 }
 ?>
 
 <div class="container my-5">
-    <h2>Ubah Data Barang</h2>
+    <h3 style="text-align: center;">Ubah Data Barang</h3>
     <?php
     $form = new Form("", "Update Barang"); // aiueo
     $form->addField("id", "", "hidden", $id);
@@ -54,5 +54,5 @@ if ($_POST) {
     $form->addField("file_gambar", "Ganti Gambar (kosongkan jika tidak diganti)", "file");
     $form->displayForm();
     ?>
-    <a href="<?= BASE_URL ?>artikel/home" class="btn btn-secondary mt-3">Kembali</a>
+    <a href="<?= BASE_URL ?>user/home" class="btn btn-secondary mt-3">Kembali</a>
 </div>

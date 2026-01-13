@@ -17,22 +17,22 @@ class Form {
 
     public function displayForm() {
         $enc = $this->enctype ? "enctype='multipart/form-data'" : "";
-        echo "<form action='" . htmlspecialchars($this->action) . "' method='POST' $enc>";
+        echo "<form action='" . htmlspecialchars($this->action) . "' method='POST' $enc class='modern-form'>";
         echo '<table width="100%" border="0">';
 
         foreach ($this->fields as $field) {
-            echo "<tr><td align='right' valign='top'>" . htmlspecialchars($field['label']) . "</td>";
+            echo "<tr class='form-group'><td align='right' valign='top' class='form-label'>" . htmlspecialchars($field['label']) . "</td>";
             echo "<td>";
 
             // Logika untuk menentukan tipe input 
             switch ($field['type']) {
                 case 'textarea':
-                    echo "<textarea name='" . htmlspecialchars($field['name']) . "' cols='30' rows='4'>" . 
+                    echo "<textarea name='" . htmlspecialchars($field['name']) . "' cols='30' rows='4' class='form-control'>" . 
                          htmlspecialchars($field['value'] ?? '') . "</textarea>";
                     break;
 
                 case 'select':
-                    echo "<select name='" . htmlspecialchars($field['name']) . "'>";
+                    echo "<select name='" . htmlspecialchars($field['name']) . "' class='form-control'>";
                     foreach ($field['options'] as $value => $label) {
                         $selected = ($value == ($field['value'] ?? '')) ? ' selected' : '';
                         echo "<option value='" . htmlspecialchars($value) . "'$selected>" . 
@@ -44,8 +44,8 @@ class Form {
                 case 'radio':
                     foreach ($field['options'] as $value => $label) {
                         $checked = ($value == ($field['value'] ?? '')) ? ' checked' : '';
-                        echo "<label><input type='radio' name='" . htmlspecialchars($field['name']) . 
-                             "' value='" . htmlspecialchars($value) . "'$checked> " . 
+                        echo "<label class='form-check'><input type='radio' name='" . htmlspecialchars($field['name']) . 
+                             "' value='" . htmlspecialchars($value) . "'$checked class='form-check-input'> " . 
                              htmlspecialchars($label) . "</label> ";
                     }
                     break;
@@ -54,26 +54,26 @@ class Form {
                     $values = (array)($field['value'] ?? []);
                     foreach ($field['options'] as $value => $label) {
                         $checked = in_array($value, $values) ? ' checked' : '';
-                        echo "<label><input type='checkbox' name='" . htmlspecialchars($field['name']) . 
-                             "[]' value='" . htmlspecialchars($value) . "'$checked> " . 
+                        echo "<label class='form-check'><input type='checkbox' name='" . htmlspecialchars($field['name']) . 
+                             "[]' value='" . htmlspecialchars($value) . "'$checked class='form-check-input'> " . 
                              htmlspecialchars($label) . "</label> ";
                     }
                     break;
 
                 case 'password':
                     echo "<input type='password' name='" . htmlspecialchars($field['name']) . 
-                         "' value='" . htmlspecialchars($field['value'] ?? '') . "'>";
+                         "' value='" . htmlspecialchars($field['value'] ?? '') . "' class='form-control'>";
                     break;
 
                 case 'file':
                     $this->enctype = true;  // Auto set enctype
-                    echo "<input type='file' name='" . htmlspecialchars($field['name']) . "'>";
+                    echo "<input type='file' name='" . htmlspecialchars($field['name']) . "' class='form-control'>";
                     break;
 
                 default: // text atau lain
                     echo "<input type='" . htmlspecialchars($field['type']) . "' name='" . 
                          htmlspecialchars($field['name']) . "' value='" . 
-                         htmlspecialchars($field['value'] ?? '') . "'>";
+                         htmlspecialchars($field['value'] ?? '') . "' class='form-control'>";
                     break;
             }
 
@@ -81,7 +81,7 @@ class Form {
         }
 
         echo "<tr><td colspan='2'>";
-        echo "<input type='submit' value='" . htmlspecialchars($this->submit) . "'></td></tr>";
+        echo "<input type='submit' value='" . htmlspecialchars($this->submit) . "' class='btn btn-primary'></td></tr>";
         echo "</table>";
         echo "</form>";
     }

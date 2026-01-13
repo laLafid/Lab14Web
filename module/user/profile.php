@@ -72,6 +72,6 @@ if ($_POST) {
     </div>
 
     <div class="mt-3 text-center">
-        <a href="<?= BASE_URL ?>artikel/home" class="btn btn-secondary">Kembali ke Home</a>
+        <a href="<?= BASE_URL ?>user/home" class="btn btn-secondary">Kembali ke Home</a>
     </div>
 </div>

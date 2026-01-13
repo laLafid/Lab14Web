@@ -31,10 +31,10 @@ if ($_POST) {
             $_SESSION['is_login'] = true;
             $_SESSION['username'] = $data['username'];
             $_SESSION['nama'] = $data['nama'];
-            $_SESSION['role'] = $data['role'] ?? 'user';
+            $_SESSION['role'] = $data['role'] ?? 'user'; 
 
             // Redirect ke halaman utama
-            header('Location:' . BASE_URL . '/artikel/home');
+            header('Location:' . BASE_URL . '/user/home');
             exit;
         } else {
             $message = "Username atau password salah!";

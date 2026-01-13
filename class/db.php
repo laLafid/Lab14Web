@@ -4,7 +4,7 @@ if (!file_exists(ROOT . 'config.php')) {
     die('File config.php tidak ditemukan di: ' . ROOT . 'config.php'); } // ngambek kalo ga gini 
 require_once ROOT . 'config.php';
 define('GAMBAR', ROOT . 'gambar/');
-define('BASE_URL', 'http://localhost/webpro14/');  // ganti sesuai folder , jangn lupain di .htaccess juga
+define('BASE_URL', 'http://localhost/webpro16/');  // ganti sesuai folder , jangn lupain di .htaccess juga
  
  
 class Database {
@@ -30,8 +30,45 @@ class Database {
         $this->db_name = $config['db_name'];
     }
 
-    public function query($sql) {
-        return $this->conn->query($sql);
+    public function query($sql, $params = []) {
+        if (empty($params)) {
+            return $this->conn->query($sql);
+        } else {
+            $stmt = $this->conn->prepare($sql);
+            if ($stmt === false) {
+                error_log("Failed to prepare statement: " . $this->conn->error);
+                return false;
+            }
+
+            // Dynamically determine types for bind_param
+            $types = '';
+            foreach ($params as $param) {
+                if (is_int($param)) {
+                    $types .= 'i';
+                } elseif (is_float($param)) {
+                    $types .= 'd';
+                } else {
+                    $types .= 's'; // Default to string
+                }
+            }
+            $stmt->bind_param($types, ...$params);
+
+            if ($stmt->execute()) {
+                // For SELECT, return the result set
+                if (strtoupper(substr(trim($sql), 0, 6)) == 'SELECT') {
+                    $result = $stmt->get_result();
+                    $stmt->close();
+                    return $result;
+                }
+                // For INSERT, UPDATE, DELETE, return true on success
+                $stmt->close();
+                return true;
+            } else {
+                error_log("Failed to execute statement: " . $stmt->error);
+                $stmt->close();
+                return false;
+            }
+        }
     }
 
     public function get($table, $where = null) {
@@ -118,6 +155,38 @@ class Database {
         } else {
             return false;
         }
+    }
+    // dari yang sebelumnya di home.php 
+    public function renderPagination($num_page, $current_page, $query_param = '') {
+        echo "<ul class='pagination'>";
+
+        $query_string = !empty($query_param) ? "&q=" . urlencode($query_param) : "";
+
+        // Previous button
+        if ($current_page > 1) {
+            $prev = $current_page - 1;
+            $prev_link = "?page={$prev}" . $query_string;
+            echo "<li><a href='{$prev_link}'>&laquo; </a></li>";
+        } else {
+            echo "<li class='disabled'><a>&laquo; </a></li>";
+        }
+
+        // Page numbers
+        for ($i = 1; $i <= $num_page; $i++) {
+            $link = "?page={$i}" . $query_string;
+            $class = ($current_page == $i ? 'active' : '');
+            echo "<li><a class=\"{$class}\" href=\"{$link}\">{$i}</a></li>";
+        }
+
+        // Next button
+        if ($current_page < $num_page) {
+            $next = $current_page + 1;
+            $next_link = "?page={$next}" . $query_string;
+            echo "<li><a href='{$next_link}'> &raquo;</a></li>";
+        } else {
+            echo "<li class='disabled'><a> &raquo;</a></li>";
+        }
+        echo "</ul>";
     }
 }
 ?>

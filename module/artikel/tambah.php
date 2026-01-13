@@ -22,13 +22,13 @@ if ($_POST) {
     }
 
     $db->insert('data_barang', $data);
-    header("Location: " . BASE_URL . "artikel/home");
+    header("Location: " . BASE_URL . "user/home");
     exit;
 }
 ?>
 
 <div class="container my-5">
-    <h2>Tambah Barang Baru</h2>
+    <h3 style="text-align: center;">Tambah Barang Baru</h3>
     <?php
     $form = new Form("", "Simpan Barang"); // ganti baru e
     $form->addField("nama", "Nama Barang", "text");
@@ -45,5 +45,5 @@ if ($_POST) {
     $form->addField("file_gambar", "Gambar Barang", "file");  
     $form->displayForm();
     ?>
-    <a href="<?= BASE_URL ?>artikel/home" class="btn btn-secondary mt-3">Kembali</a>
+    <a href="<?= BASE_URL ?>user/home" class="btn btn-secondary mt-3">Kembali</a>
 </div>
